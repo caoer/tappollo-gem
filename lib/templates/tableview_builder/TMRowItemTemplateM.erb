@@ -26,3 +26,24 @@
     return cell;
 }
 @end
+
+@implementation TMSectionItem (<%=project_prefix%><%=class_name%>RowItem)
+
+- (<%=project_prefix%><%=class_name%>RowItem *)added<%=project_prefix%><%=class_name%>RowItemWithText:(NSString *)text detailText:(NSString *)detailText image:(UIImage *)image {
+    <%=project_prefix%><%=class_name%>RowItem *item = [[<%=project_prefix%><%=class_name%>RowItem alloc] init];
+    [self addRowItem:item];
+    item.text = text;
+    item.detailText = detailText;
+    item.image = image;
+    return item;
+}
+
+- (<%=project_prefix%><%=class_name%>RowItem *)added<%=project_prefix%><%=class_name%>RowItemWithText:(NSString *)text {
+    return [self added<%=project_prefix%><%=class_name%>RowItemWithText:text detailText:nil image:nil];
+}
+
+- (<%=project_prefix%><%=class_name%>RowItem *)added<%=project_prefix%><%=class_name%>RowItemWithText:(NSString *)text detailText:(NSString *)detailText {
+    return [self added<%=project_prefix%><%=class_name%>RowItemWithText:text detailText:detailText image:nil];
+}
+
+@end

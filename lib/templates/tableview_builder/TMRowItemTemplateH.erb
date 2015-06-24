@@ -11,3 +11,9 @@
 @interface <%=project_prefix%><%=class_name%>RowItem : TMRowItem
 
 @end
+
+@interface TMSectionItem (<%=project_prefix%><%=class_name%>RowItem)
+- (<%=project_prefix%><%=class_name%>RowItem *)added<%=project_prefix%><%=class_name%>RowItemWithText:(NSString *)text detailText:(NSString *)detailText image:(UIImage *)image;
+- (<%=project_prefix%><%=class_name%>RowItem *)added<%=project_prefix%><%=class_name%>RowItemWithText:(NSString *)text detailText:(NSString *)detailText;
+- (<%=project_prefix%><%=class_name%>RowItem *)addedWJLLHomeV2ListDetailStudentReviewRowItemWithText:(NSString *)text;
+@end
