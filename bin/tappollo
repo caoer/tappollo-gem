@@ -12,11 +12,11 @@ class App
     # your program code here
     # You can access CLI options via
     # the options Hash
-    
+
     # puts options["class-name"]
 
     if options["table-row"]
-      Tappollo::render_table_row(options["class-name"], options["project_name"], options["project-prefix"] , options["author-name"])
+      Tappollo::render_table_row(options["class-name"], options["project_name"], options["project-prefix"] , options["author-name"], options["force"])
     end
   end
 
@@ -27,7 +27,7 @@ class App
   description "one line description of your app"
 
   on("-t TABLE_ROW", "--table-row", "create TMTableViewRowItem and it's UITableViewCell subclass")
-  
+
   on("--class-name [class-name]", "tableview row item name")
   on("--project-name [project-name]", "project Name")
   # options['project-prefix'] = "TM"
@@ -36,7 +36,8 @@ class App
 
   options['author-name'] = "Zitao Xiong"
   on("--author-name [author-name]", "author Name")
-
+  # options["force"] = false
+  on("--force","Overwrite files if they exist")
   #
   # Accept flags via:
   # on("--flag VAL","Some flag")
