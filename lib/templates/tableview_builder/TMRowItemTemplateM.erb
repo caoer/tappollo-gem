@@ -9,6 +9,9 @@
 #import "<%=project_prefix%><%=class_name%>RowItem.h"
 #import "<%=project_prefix%><%=class_name%>TableViewCell.h"
 
+@interface <%=project_prefix%><%=class_name%>RowItem()
+@end
+
 @implementation <%=project_prefix%><%=class_name%>RowItem
 + (NSString *)reuseIdentifier {
     return NSStringFromClass([<%=project_prefix%><%=class_name%>TableViewCell class]);
