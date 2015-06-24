@@ -6,9 +6,9 @@ module Tappollo
   def self.render_table_row(class_name, project_name, project_prefix, author_name)
     generate_files(class_name, project_name, project_prefix, author_name, "RowItem.h", "/templates/tableview_builder/TMRowItemTemplateH.erb")
     generate_files(class_name, project_name, project_prefix, author_name, "RowItem.m", "/templates/tableview_builder/TMRowItemTemplateM.erb")
-    generate_files(class_name, project_name, project_prefix, author_name, "Cell.h", "/templates/tableview_builder/TMTableViewCellH.erb")
-    generate_files(class_name, project_name, project_prefix, author_name, "Cell.m", "/templates/tableview_builder/TMTableViewCellM.erb")
-    generate_files(class_name, project_name, project_prefix, author_name, "Cell.xib", "/templates/tableview_builder/TMTableViewCellXib.erb")
+    generate_files(class_name, project_name, project_prefix, author_name, "TableViewCell.h", "/templates/tableview_builder/TMTableViewCellH.erb")
+    generate_files(class_name, project_name, project_prefix, author_name, "TableViewCell.m", "/templates/tableview_builder/TMTableViewCellM.erb")
+    generate_files(class_name, project_name, project_prefix, author_name, "TableViewCell.xib", "/templates/tableview_builder/TMTableViewCellXib.erb")
   end
 
   def self.generate_files(class_name, project_name, project_prefix, author_name, file_postfix, template_path)
