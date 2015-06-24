@@ -6,7 +6,7 @@
 //  Copyright (c) <%=Time.now.strftime("%Y")%> <%=author_name%>. All rights reserved.
 //
 
-#import "TMRowItem.h"
+#import "<%=project_prefix%><%=class_name%>RowItem.h"
 #import "<%=project_prefix%><%=class_name%>TableViewCell.h"
 
 @implementation <%=project_prefix%><%=class_name%>RowItem
@@ -21,8 +21,8 @@
     return self;
 }
 
-- ([<%=project_prefix%><%=class_name%>TableViewCell *)cellForRow {
-    [<%=project_prefix%><%=class_name%>TableViewCell *cell = [super cellForRow];
+- (<%=project_prefix%><%=class_name%>TableViewCell *)cellForRow {
+    <%=project_prefix%><%=class_name%>TableViewCell *cell = [super cellForRow];
     return cell;
 }
 @end
