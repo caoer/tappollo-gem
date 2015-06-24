@@ -9,6 +9,9 @@ module Tappollo
     generate_files(class_name, project_name, project_prefix, author_name, "TableViewCell.h", "/templates/tableview_builder/TMTableViewCellH.erb")
     generate_files(class_name, project_name, project_prefix, author_name, "TableViewCell.m", "/templates/tableview_builder/TMTableViewCellM.erb")
     generate_files(class_name, project_name, project_prefix, author_name, "TableViewCell.xib", "/templates/tableview_builder/TMTableViewCellXib.erb")
+
+    # nib_file = "#{project_prefix}#{class_name}TableViewCell.xib"
+    # `xattr -d com.apple.TextEncoding #{nib_file}`
   end
 
   def self.generate_files(class_name, project_name, project_prefix, author_name, file_postfix, template_path)
