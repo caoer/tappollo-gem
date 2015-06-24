@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'methadone'
+require 'tappollo.rb'
+
+class App
+  include Methadone::Main
+  include Methadone::CLILogging
+
+  main do |arg| # Add args you want: |like,so|
+    # your program code here
+    # You can access CLI options via
+    # the options Hash
+    
+    puts options["table-row"]
+
+    Tappollo::render_table_row
+  end
+
+  # supplemental methods here
+
+  # Declare command-line interface here
+
+  description "one line description of your app"
+
+  options['ip-address'] = '127.0.0.1'
+  on("-i IP_ADDRESS","--ip-address","IP Address")
+  options['table-row']
+  on("-t TABLE_ROW", "--table-row", "tableview row item name")
+
+  #
+  # Accept flags via:
+  # on("--flag VAL","Some flag")
+  # options[flag] will contain VAL
+  #
+  # Specify switches via:
+  # on("--[no-]switch","Some switch")
+  #
+  # Or, just call OptionParser methods on opts
+  #
+  # Require an argument
+  # arg :some_arg 
+  #
+  # # Make an argument optional
+  # arg :optional_arg, :optional
+
+  version Tappollo::VERSION
+
+  use_log_level_option :toggle_debug_on_signal => 'USR1'
+
+  go!
+end
