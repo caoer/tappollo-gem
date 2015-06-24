@@ -13,9 +13,11 @@ class App
     # You can access CLI options via
     # the options Hash
     
-    puts options["table-row"]
+    # puts options["class-name"]
 
-    Tappollo::render_table_row
+    if options["table-row"]
+      Tappollo::render_table_row(options["class-name"], options["project_name"], options["project-prefix"] , options["author-name"])
+    end
   end
 
   # supplemental methods here
@@ -24,10 +26,16 @@ class App
 
   description "one line description of your app"
 
-  options['ip-address'] = '127.0.0.1'
-  on("-i IP_ADDRESS","--ip-address","IP Address")
-  options['table-row']
-  on("-t TABLE_ROW", "--table-row", "tableview row item name")
+  on("-t TABLE_ROW", "--table-row", "create TMTableViewRowItem and it's UITableViewCell subclass")
+  
+  on("--class-name [class-name]", "tableview row item name")
+  on("--project-name [project-name]", "project Name")
+  # options['project-prefix'] = "TM"
+
+  on("--project-prefix [project-prefix]", "project Prefix")
+
+  options['author-name'] = "Zitao Xiong"
+  on("--author-name [author-name]", "author Name")
 
   #
   # Accept flags via:

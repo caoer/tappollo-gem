@@ -1,0 +1,28 @@
+//
+//  <%=project_prefix%><%=class_name%>RowItem.m
+//  <%=project_name%>
+//
+//  Created by <%=author_name%> on <%=Time.now.strftime("%m/%d/%y")%>.
+//  Copyright (c) <%=Time.now.strftime("%Y")%> <%=author_name%>. All rights reserved.
+//
+
+#import "TMRowItem.h"
+#import "<%=project_prefix%><%=class_name%>TableViewCell.h"
+
+@implementation <%=project_prefix%><%=class_name%>RowItem
++ (NSString *)reuseIdentifier {
+    return NSStringFromClass([<%=project_prefix%><%=class_name%>TableViewCell class]);
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
+
+- ([<%=project_prefix%><%=class_name%>TableViewCell *)cellForRow {
+    [<%=project_prefix%><%=class_name%>TableViewCell *cell = [super cellForRow];
+    return cell;
+}
+@end
